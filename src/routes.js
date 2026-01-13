@@ -205,13 +205,13 @@ export const utilityRoutes = {
 
 export default [
     formRoutes,
-//   pageRoutes,
-//   emailRoutes,
-//   authenticationRoutes,
-//   ECommerceRoutes,
-//   componentRoutes,
-//   utilityRoutes,
-//   pluginRoutes,
-//   documentationRoutes,
-//   changelogRoutes
+  pageRoutes,
+  emailRoutes,
+  authenticationRoutes,
+  ECommerceRoutes,
+  componentRoutes,
+  utilityRoutes,
+  pluginRoutes,
+  documentationRoutes,
+  changelogRoutes
 ];
