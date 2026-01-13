@@ -1,7 +1,9 @@
-# Use Node.js 16 (Debian-based for best node-gyp compatibility)
-FROM node:16-buster
+############################
+# Build stage
+############################
+FROM node:16-buster AS build
 
-# Install Python 2 and build tools required by node-gyp / node-sass
+# Install Python 2 and build tools for node-gyp / node-sass
 RUN apt-get update && apt-get install -y \
     python2 \
     python2-dev \
@@ -16,20 +18,33 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy dependency files first (better Docker caching)
+# Copy dependency files first (Docker cache optimization)
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
 
-# Copy the rest of the application
+# Copy application source
 COPY . .
 
-# Build step (if needed)
-# RUN npm run build
+# Build the app
+RUN npm run build
 
-# Expose port (adjust if needed)
-EXPOSE 3000
 
-# Start the app
-CMD ["npm", "start"]
+############################
+# Runtime stage (Nginx)
+############################
+FROM nginx:alpine
+
+# Copy build output to Nginx
+# (adjust if your build output folder is NOT "docs")
+COPY --from=build /app/docs /usr/share/nginx/html
+
+# Optional: custom nginx config
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
