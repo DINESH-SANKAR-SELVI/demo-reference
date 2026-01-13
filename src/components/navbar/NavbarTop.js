@@ -11,21 +11,21 @@ import classNames from 'classnames';
 
 const NavbarTop = () => {
   const { showBurgerMenu, setShowBurgerMenu } = useContext(AppContext);
-  // const { shoppingCart } = useContext(ProductContext);
+  const { shoppingCart } = useContext(ProductContext);
 
   return (
     <Navbar light className="navbar-glass fs--1 font-weight-semi-bold row navbar-top sticky-kit" expand>
       <NavbarToggler onClick={() => setShowBurgerMenu(!showBurgerMenu)} id="burgerMenu" />
-      {/* <Logo at="navbar-top" width={40} id="topLogo" /> */}
+      <Logo at="navbar-top" width={40} id="topLogo" />
       <Collapse navbar>
         <Nav navbar className="align-items-center d-none d-lg-block">
-          {/* <NavItem>
+          <NavItem>
             <SearchBox />
-          </NavItem> */}
+          </NavItem>
         </Nav>
 
         <Nav navbar className="align-items-center ml-auto">
-          {/* <NavItem>
+          <NavItem>
             <NavLink
               tag={Link}
               to="/e-commerce/shopping-cart"
@@ -40,9 +40,9 @@ const NavbarTop = () => {
               )}
               <FontAwesomeIcon icon="shopping-cart" transform="shrink-7" className="fs-4" />
             </NavLink>
-          </NavItem> */}
-          {/* <NotificationDropdown />
-          <ProfileDropdown /> */}
+          </NavItem>
+          <NotificationDropdown />
+          <ProfileDropdown />
         </Nav>
       </Collapse>
     </Navbar>
