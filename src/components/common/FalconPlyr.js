@@ -1,7 +1,7 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import Plyr from 'plyr/dist/plyr';
 import 'plyr/dist/plyr.css';
-import Plyr from 'plyr';
 
 class FalconPlyr extends React.Component {
   plyrRef = createRef();
@@ -36,5 +36,13 @@ class FalconPlyr extends React.Component {
 Plyr.propTypes = { value: PropTypes.any };
 
 Plyr.defaultProps = { value: `Plyr` };
+
+FalconPlyr.propTypes = {
+  videoId: PropTypes.string.isRequired
+};
+
+FalconPlyr.defaultProps = {
+  videoId: ''
+};
 
 export default FalconPlyr;
