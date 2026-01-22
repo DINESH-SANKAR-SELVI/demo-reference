@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 const AppContext = createContext({
-  isFluid: false,
+  isFluid: true,
   isRTL: false,
   isDark: false,
   showBurgerMenu: false, // controls showing vertical nav on mobile

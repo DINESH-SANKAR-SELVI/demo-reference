@@ -23,7 +23,7 @@ const NavbarVertical = () => {
         <Nav navbar vertical>
           <NavbarVerticalMenu routes={routes} handleNavbarVerticalCollapse={handleNavbarVerticalCollapse} />
         </Nav>
-        <div className={`px-3 px-${navbarBreakPoint}-0`}>
+        {/* <div className={`px-3 px-${navbarBreakPoint}-0`}>
           <hr className="border-300 my-3" />
           <h6 className="text-uppercase fs--2 font-weight-semi-bold ls text-600">Settings</h6>
           <div
@@ -47,7 +47,7 @@ const NavbarVertical = () => {
               onChange={({ target }) => setFluid(target.checked)}
             />
           </div>
-        </div>
+        </div> 
         <Button
           tag={'a'}
           href="https://themes.getbootstrap.com/product/falcon-admin-dashboard-webapp-template-react/"
@@ -58,7 +58,7 @@ const NavbarVertical = () => {
           className="my-3"
         >
           Purchase
-        </Button>
+        </Button>*/}
       </Collapse>
     </Navbar>
   );

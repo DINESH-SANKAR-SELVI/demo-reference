@@ -1,10 +1,20 @@
 import { version } from './config';
 
+export const dashboardRoutes = {
+  name: 'Dashboard',
+  to: '/e-commerce',
+  icon: 'chart-pie',
+  children: [
+    { to: '/e-commerce/products/list', name: 'Purchase' },
+    { to: '/e-commerce/products/grid', name: 'Management' }
+  ]
+};
+
 export const formRoutes = {
   name: 'Admissions',
   to: '/components/forms',
   exact: true,
-  icon: 'lock',
+  icon: 'lock'
 };
 
 export const authenticationRoutes = {
@@ -204,14 +214,15 @@ export const utilityRoutes = {
 };
 
 export default [
-    formRoutes,
+  dashboardRoutes,
+  //formRoutes,
   pageRoutes,
   emailRoutes,
   authenticationRoutes,
   ECommerceRoutes,
   componentRoutes,
   utilityRoutes,
-  pluginRoutes,
-  documentationRoutes,
-  changelogRoutes
+  pluginRoutes
+  // documentationRoutes,
+  // changelogRoutes
 ];
