@@ -47,8 +47,8 @@ const NavbarVertical = () => {
               onChange={({ target }) => setFluid(target.checked)}
             />
           </div>
-        </div> 
-        <Button
+        </div> */}
+        {/* <Button
           tag={'a'}
           href="https://themes.getbootstrap.com/product/falcon-admin-dashboard-webapp-template-react/"
           target="_blank"
@@ -58,7 +58,7 @@ const NavbarVertical = () => {
           className="my-3"
         >
           Purchase
-        </Button>*/}
+        </Button> */}
       </Collapse>
     </Navbar>
   );

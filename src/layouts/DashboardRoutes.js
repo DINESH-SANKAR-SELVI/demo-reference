@@ -101,6 +101,7 @@ const InboxRoutes = ({ match: { url } }) => (
 
 const ProductRoutes = ({ match: { url } }) => (
   <Switch>
+    <Route path={`${url}/products/add`} exact component={ProductAdd} />
     <Route path={`${url}/products/:productLayout`} exact component={Products} />
     <Route path={`${url}/checkout`} exact component={Checkout} />
     <Route path={`${url}/product-details/:id`} exact component={ProductDetails} />

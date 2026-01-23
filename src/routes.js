@@ -1,6 +1,33 @@
 // import/no-anonymous-default-export
 import { version } from './config';
 
+export const adminDashboardRoutes = {
+  name: 'Dashboard',
+  to: '/e-commerce',
+  icon: 'chart-pie',
+  children: [
+    { to: '/e-commerce/products/list', name: 'Clients' },
+    { to: '/e-commerce/products/grid', name: 'Sessions' }
+  ]
+};
+
+export const adminConfigurationRoutes = {
+  name: 'Configuration',
+  to: '/e-commerce',
+  icon: 'sliders-h',
+  children: [{ to: '/e-commerce/products/grid', name: 'Roles' }]
+};
+
+export const adminSettingsRoutes = {
+  name: 'Settings',
+  to: '/e-commerce',
+  icon: 'cog',
+  children: [
+    { to: '/e-commerce/products/grid', name: 'Language' },
+    { to: '/e-commerce/products/list', name: 'Problem & Feedback' }
+  ]
+};
+
 export const dashboardRoutes = {
   name: 'Dashboard',
   to: '/e-commerce',
@@ -70,6 +97,7 @@ export const ECommerceRoutes = {
   to: '/e-commerce',
   icon: 'cart-plus',
   children: [
+    { to: '/e-commerce/products/add', name: 'Product Add' },
     { to: '/e-commerce/products/list', name: 'Product list' },
     { to: '/e-commerce/products/grid', name: 'Product grid' },
     { to: '/e-commerce/product-details', name: 'Product details' },
@@ -216,15 +244,18 @@ export const utilityRoutes = {
 };
 
 export default [
-  dashboardRoutes,
-  //formRoutes,
-  pageRoutes,
-  emailRoutes,
-  authenticationRoutes,
-  ECommerceRoutes,
-  componentRoutes,
-  utilityRoutes,
-  pluginRoutes
-  // documentationRoutes,
+  adminDashboardRoutes,
+  adminConfigurationRoutes,
+  adminSettingsRoutes
+  // dashboardRoutes,
+  // //formRoutes,
+  // pageRoutes,
+  // emailRoutes,
+  // authenticationRoutes,
+  // ECommerceRoutes,
+  // componentRoutes,
+  // utilityRoutes,
+  // pluginRoutes
+  // // documentationRoutes,
   // changelogRoutes
 ];
