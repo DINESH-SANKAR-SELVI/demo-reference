@@ -2,7 +2,7 @@
   "extends": ["react-app", "prettier", "plugin:react/recommended"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "react/no-unescaped-entities": true
+    "prettier/prettier": "error"
+    // "react/no-unescaped-entities": false
   }
 }

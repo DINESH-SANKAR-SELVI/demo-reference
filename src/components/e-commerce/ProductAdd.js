@@ -94,7 +94,7 @@ const ProductAdd = () => {
                     ))}
               </Row>
             </CardBody>
-            <FalconCardFooterLink title="Show all products" to="/e-commerce/products" borderTop={false} />
+            <FalconCardFooterLink title="Show all products" to="/e-commerce/products/list" borderTop={false} />
           </Card>
         </Fragment>
       }

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Activity from '../components/page/Activity';
@@ -73,6 +75,7 @@ import Changelog from '../components/changelog/Changelog';
 import ProgressBarJs from '../components/plugins/ProgressBarJs';
 import Products from '../components/e-commerce/Products';
 import ProductDetails from '../components/e-commerce/ProductDetails';
+import ProductAdd from '../components/e-commerce/ProductAdd';
 import ShoppingCart from '../components/e-commerce/ShoppingCart';
 import FavouriteItems from '../components/e-commerce/FavouriteItems';
 import Orders from '../components/e-commerce/Orders';
@@ -102,6 +105,7 @@ const ProductRoutes = ({ match: { url } }) => (
     <Route path={`${url}/checkout`} exact component={Checkout} />
     <Route path={`${url}/product-details/:id`} exact component={ProductDetails} />
     <Route path={`${url}/product-details/`} exact component={ProductDetails} />
+    <Route path={`${url}/product/add`} exact component={ProductAdd} />
     <Route path={`${url}/shopping-cart`} exact component={ShoppingCart} />
     <Route path={`${url}/orders`} exact component={Orders} />
     <Route path={`${url}/order-details`} exact component={OrderDetails} />

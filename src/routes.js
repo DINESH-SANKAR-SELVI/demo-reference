@@ -1,3 +1,4 @@
+// import/no-anonymous-default-export
 import { version } from './config';
 
 export const dashboardRoutes = {
@@ -72,6 +73,7 @@ export const ECommerceRoutes = {
     { to: '/e-commerce/products/list', name: 'Product list' },
     { to: '/e-commerce/products/grid', name: 'Product grid' },
     { to: '/e-commerce/product-details', name: 'Product details' },
+    { to: '/e-commerce/product/add', name: 'Product Add' },
     { to: '/e-commerce/orders', name: 'Orders' },
     { to: '/e-commerce/order-details', name: 'Order details' },
     { to: '/e-commerce/customers', name: 'Customers' },
