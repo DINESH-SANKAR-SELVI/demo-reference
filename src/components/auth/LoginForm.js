@@ -6,6 +6,7 @@ import { Button, Form, Row, Col, FormGroup, Input, CustomInput, Label } from 're
 import Divider from '../common/Divider';
 import SocialAuthButtons from './SocialAuthButtons';
 import withRedirect from '../../hoc/withRedirect';
+import authService from '../../service/authService';
 
 const LoginForm = ({ setRedirect, hasLabel, layout }) => {
   // State
@@ -17,7 +18,15 @@ const LoginForm = ({ setRedirect, hasLabel, layout }) => {
   // Handler
   const handleSubmit = e => {
     e.preventDefault();
-    toast.success(`Logged in as ${email}`);
+
+    authService
+      .login({
+        clientName: email,
+        password: password
+      })
+      .then(res => toast.success(`Logged in as ${email}}`))
+      .catch(() => toast.success(`Check username (or) password`));
+
     setRedirect(true);
   };
 
@@ -33,7 +42,7 @@ const LoginForm = ({ setRedirect, hasLabel, layout }) => {
           placeholder={!hasLabel ? 'Email address' : ''}
           value={email}
           onChange={({ target }) => setEmail(target.value)}
-          type="email"
+          type="text"
         />
       </FormGroup>
       <FormGroup>

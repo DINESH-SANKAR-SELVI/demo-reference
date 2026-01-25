@@ -246,12 +246,12 @@ export const utilityRoutes = {
 export default [
   adminDashboardRoutes,
   adminConfigurationRoutes,
-  adminSettingsRoutes
+  adminSettingsRoutes,
   // dashboardRoutes,
   // //formRoutes,
   // pageRoutes,
   // emailRoutes,
-  // authenticationRoutes,
+  authenticationRoutes,
   // ECommerceRoutes,
   // componentRoutes,
   // utilityRoutes,
